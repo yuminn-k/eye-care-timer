@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>EyeCare Timer</h1>
+
+    <div class="settings">
+      <div class="setting-item">
+        <label>작업 시간 (분)</label>
+        <input type="number" id="workTime" min="1" max="120" value="50">
+      </div>
+      <div class="setting-item">
+        <label>휴식 시간 (분)</label>
+        <input type="number" id="breakTime" min="1" max="30" value="10">
+      </div>
+    </div>
+
+    <div class="timer">
+      <span id="timeLeft">50:00</span>
+      <div id="status">작업 시간</div>
+    </div>
+
+    <div class="controls">
+      <button id="startTimer">시작</button>
+      <button id="resetTimer">초기화</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>
