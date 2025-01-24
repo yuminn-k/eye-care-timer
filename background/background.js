@@ -43,7 +43,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       breakTime = parseInt(message.breakTime);
 
       if (!validateTimeSettings(workTime, breakTime)) {
-        throw new Error('Invalid time settings');
+        throw new Error("Invalid time settings");
       }
 
       timeLeft = isWorking ? workTime * 60 : breakTime * 60;
@@ -57,15 +57,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         }
       }, 1000);
     } catch (error) {
-      console.error('Time error:', error);
+      console.error("Time error:", error);
       chrome.notifications.create({
-        type: 'basic',
-        iconUrl: '../icons/icon128.png',
-        title: '설정 오류',
-        message: '올바른 시간 값을 입력해주세요.',
+        type: "basic",
+        iconUrl: "../icons/icon128.png",
+        title: "설정 오류",
+        message: "올바른 시간 값을 입력해주세요.",
       });
     }
-  }
   } else if (message.action === "stopTimer") {
     clearInterval(timer);
   } else if (message.action === "resetTimer") {
